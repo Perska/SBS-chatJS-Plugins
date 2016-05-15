@@ -18,7 +18,7 @@ var update = function(){
   a.send();
   var n = a.responseText;
   alert(n);
-  n = /[\s\S\n]*\n(\/\/ START BOOT\n[\s\S]+?\n\/\/ END BOOT)\n[\s\S\n]*/.exec(n);
+  n = /^[\s\S]*\n(\/\/ START BOOT\n[\s\S]+?\n\/\/ END BOOT)\n[\s\S]+?$/.exec(n);
   alert(n);
 };
 addUpdateCommand();
