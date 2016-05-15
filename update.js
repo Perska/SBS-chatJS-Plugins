@@ -35,10 +35,11 @@ var update = function(){
     "chatJS": n
   });
   var h = new XMLHttpRequest;
-  h.open("POST", "/query/savesettings", false);
+  h.open("POST", "/query/savesettings?pretty=1", false);
   h.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   h.send(params);
-  alert(h.responseText);
+  systemMessage(params);
+  systemMessage(h.responseText);
 };
 addUpdateCommand();
 // First, check for the first bootstrap by seeing if the ver variable exists
