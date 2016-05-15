@@ -29,8 +29,8 @@ if(typeof ver === "undefined"){
   }, 3000);
 } else {
   // Now we check if this is the latest version, and if it isn't, show a message and add /update (seeing that's the point of this)
-  alert(Number(ver) < Number(latestVer));
   if(Number(ver) < Number(latestVer)){
+    alert();
     setTimeout(function(){
       warningMesaage("Bootstrap update:\nThere is an update to the chatJS bootstrap. Use /update to auto update or get the latest from http://shadowc-x-11.github.io/SBS-chatJS-Plugins/bootstrap.js\nYour version: " + ver + "\nLatest version: " + latestVer);
     }, 3000);
