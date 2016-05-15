@@ -50,7 +50,7 @@ if(typeof Socket !== "undefined"){
 };
 addCommand("loadplugin", loadPlugin, "Loads a plugin from the SBS chatJS database");
 
-var EventEmitter = function(){
+window.EventEmitter = function(){
 	this._events = {};
 };
 EventEmitter.prototype._attachEvent = function(event, func, once){
@@ -120,7 +120,7 @@ var showVersion = function(){
 };
 addCommand("version", showVersion, "Shows the current version of the chatJS subsystem");
 
-var events = new EventEmitter;
+window.events = new EventEmitter;
 var odm = displayMessage;
 displayMessage = function(msg){
 	events.emit("message", msg);
