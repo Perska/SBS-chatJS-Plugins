@@ -27,7 +27,8 @@ window.loadPlugin = function(pluginName){
 			eval("var init;\n" + xhr.responseText + "\n" + injection);
 			loadedPlugins.push(pluginName);
 		} catch(e){
-			warningMessage("Error loading plugin:\n" + e.stack);
+			warningMessage("Error loading plugin:\n");
+			console.error(e);
 			alert(e);
 		}
 	}, 0);
