@@ -17,7 +17,7 @@ function addCommand(name, body, desc) {
 window.loadPlugin = function(pluginName){
 	if(pluginName in loadedPlugins)
 		return;
-	setImmediate(function(){
+	setTimeout(function(){
 		var injection = "var init = init || function(){}; if(typeof Socket === \"undefined\") init(); else window.addEventListener(\"load\", init);";
 		var baseURL = "http://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/plugins/";
 		var xhr = new XHRHttpRequest;
@@ -29,7 +29,7 @@ window.loadPlugin = function(pluginName){
 		} catch(e){
 			warningMessage("Error loading plugin:\n" + e.stack);
 		}
-	});
+	}, 0);
 };
 addCommand("loadplugin", loadPlugin, "Loads a plugin from the SBS chatJS database");
 
