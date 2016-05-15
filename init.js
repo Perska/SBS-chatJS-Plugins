@@ -6,6 +6,11 @@
 
 var loadedPlugins = [];
 
+// By slackerSnail
+function addCommand(name, body, desc) {
+	commands.push(new Command(name, body, desc));
+};
+
 var loadPlugin = function(pluginName){
 	if(pluginName in loadedPlugins)
 		return;
@@ -66,11 +71,6 @@ var moduleMessage = function(msg){
 		"module": "chatjs",
 		"uid": useruid
 	});
-};
-
-// By slackerSnail
-function addCommand(name, body, desc) {
-	commands.push(new Command(name, body, desc));
 };
 
 var localhelp = function(arg){
