@@ -3,17 +3,16 @@
       Notice: WIP.
 */
 
-var key = function(arg){
-      var chars_;
-      if (arg.length === 0){
-          chars_ = 8;
-      }
-      else{
-          chars_ = arg[0];
+function key(param){
+      var param = quickParamParse(param);
+      var whatsthekeylength;
+      whatsthekeylength = 8;
+      if (param.length === 1){
+            whatsthekeylength = arg[0];
       }
       var key = '';
-      for (var i = 0; i < chars_; i++){
-          key += "0123456789ABCDEFHJIJKLMNOPQRSTUVWXYZ"[Math.floor(Math.random() * 36)];
+      for (var i = 0; i < whatsthekeylength; i++){
+            key += "0123456789ABCDEFHJIJKLMNOPQRSTUVWXYZ"[Math.floor(Math.random() * 36)];
       }
       systemMessage("The key is: " + key + ".");
 };
