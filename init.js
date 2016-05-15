@@ -11,7 +11,7 @@ var loadPlugin = function(pluginName){
 		return;
 	setImmediate(function(){
 		var injection = "var init = init || function(){}; if(typeof Socket === \"undefined\") init(); else window.addEventListener(\"load\", init);";
-		var baseURL = "http://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/plugins/";
+		var baseURL = "http://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/plugins/";
 		var xhr = new XHRHttpRequest;
 		xhr.open("GET", baseURL + pluginName + ".js", false);
 		xhr.send();
