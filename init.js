@@ -68,6 +68,7 @@ EventEmitter.prototype.emit = function(event){
 
 var moduleMessage = function(msg){
 	displayMessage({
+		"type": "module",
 		"module": "chatjs",
 		"uid": useruid
 	});
