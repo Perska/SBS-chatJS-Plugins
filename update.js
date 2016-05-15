@@ -14,7 +14,7 @@ var addUpdateCommand = function(){
 
 var update = function(){
   var a = new XMLHttpRequest;
-  a.open("GET", "http://shadowc-x-11.github.io/SBS-chatJS-Plugins/bootstrap.js");
+  a.open("GET", "http://shadowc-x-11.github.io/SBS-chatJS-Plugins/bootstrap.js", false);
   a.send();
   var n = a.responseText;
   alert(n);
