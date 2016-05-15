@@ -8,6 +8,10 @@ chatJS.send();
 chatJS = chatJS.responseText;
 var latestVer = "1.1";
 
+var addUpdateCommand = function(){
+  commands.push(new Command("update", update, "Updates the bootstrap"));
+}
+
 var update = function(){
   var a = new XMLHttpRequest;
   a.open("GET", "http://shadowc-x-11.github.io/SBS-chatJS-Plugins/bootstrap.js");
