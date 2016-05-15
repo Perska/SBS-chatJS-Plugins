@@ -4,7 +4,7 @@
 	By ShadowCX11 & slackerSnail, 2016
 */
 
-var version = "SBS chatJS Plugin System v1.0.0. Last modified " + x.getResponseHeaders("Last-Modified");
+var version = "SBS chatJS Plugin System v1.0.0. Last modified " + x.getResponseHeader("Last-Modified");
 
 var loadedPlugins = [];
 window.setImmediate = function(func){
