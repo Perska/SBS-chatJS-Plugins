@@ -13,13 +13,9 @@ var key = function(param){
       if (params.length > 0){
             whatsthekeylength = params[0];
       }
-      else if (params.length < 0){
-            whatsthekeylength = -params[0];
-            include_weirds = 2;
-      }
       var mahkey = '';
       for (var i = 0; i < whatsthekeylength; i++){
-            mahkey += "0123456789ABCDEFHJIJKLMNOPQRSTUVWXYZ_-"[Math.floor(Math.random() * (36 + include_weirds))];
+            mahkey += "0123456789ABCDEFHJIJKLMNOPQRSTUVWXYZ"[Math.floor(Math.random() * 36)];
       }
       moduleMessage("The key is: " + mahkey + ".");
 };
