@@ -1,0 +1,4 @@
+{
+  "name": "Chat Preferences API",
+  "description": "An API that allows plugins to store settings data.",
+}
