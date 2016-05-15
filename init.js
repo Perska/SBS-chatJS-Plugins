@@ -15,8 +15,12 @@ window.addCommand = function(name, body, desc) {
 
 window.loadPlugin = function(pluginName){
 	pluginName = pluginName.trim();
-	if(loadedPlugins.indexOf(pluginName) !== -1)
+	if(loadedPlugins.indexOf(pluginName) !== -1){
+		if(this.command === "loadplugin"){
+			warningMessage("Plugin \"" + pluginName + "\" is already loaded!");
+		}
 		return;
+	}
 	setTimeout(function(){
 		var injection = `
 var init = init || function(){};
