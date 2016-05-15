@@ -66,15 +66,14 @@ var init = function(){
 		whenNotify = notifyPrefs.get("when");
 		systemMessage("Web Notifications plugin loaded!");
 	}, 2000);
-	var odm = displayMessage;
-	displayMessage = function(msg){
+	events.on("message", function(msg){
       try {
 		if(!bg || !allowNotify || (ignoreList.indexOf(msg.uid) !== -1)){
-			return odm(msg);
+			return;
 		}
 		var un = "", mesg = unescape(msg.message), img = "";
 		if(whenNotify && (mesg.indexOf(username) === -1)){
-			return odm(msg);
+			return;
 		}
 		switch(msg.type){
 			case "message":
@@ -111,13 +110,12 @@ var init = function(){
 				un = "System";
 				img = "https://cdn3.iconfinder.com/data/icons/macosxstyle/macosxstyle_png/512/System%20Preferences.png";
 				break;
-		}
 		doNotify(un, mesg, img);
-		return odm(msg);
+		return;
       } catch(e){
 		warningMessage(e.stack);
       }
-	};
+});
 };
 
 addCommand("notify", notify, "Toggles web notifications");
