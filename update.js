@@ -34,7 +34,7 @@ var update = function(){
   var h = new XMLHttpRequest;
   h.open("POST", "/query/savesettings?pretty=1", false);
   var fd = new FormData;
-  fd.append(chatJS, JSON.stringify(n))
+  fd.append("chatJS", JSON.stringify(n))
   h.send(fd);
   systemMessage(h.responseText);
 };
