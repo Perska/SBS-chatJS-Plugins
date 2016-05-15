@@ -1,0 +1,9 @@
+{
+  "name": "What's the key?",
+  "description": "Quickly generate a key for those KEY PLS posts.",
+  "commands": [
+    {
+      "name": "/whatsthekey [length]",
+      "description": "Generate a 8-letter key, unless length is specified."
+    }]
+}
