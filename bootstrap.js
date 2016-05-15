@@ -4,7 +4,6 @@
 var xhr = new XMLHttpRequest;
 xhr.open("GET", "https://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/required.json", false);
 xhr.send();
-alert(xhr.responseText)
 var modules = JSON.parse(xhr.responseText);
 modules.forEach(function(name){
 	var x = new XMLHttpRequest;
