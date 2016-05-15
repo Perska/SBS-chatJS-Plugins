@@ -73,7 +73,8 @@ var moduleMessage = function(msg){
 	displayMessage({
 		"type": "module",
 		"module": "chatjs",
-		"uid": useruid
+		"uid": useruid,
+		"message": msg
 	});
 };
 
