@@ -18,7 +18,6 @@ var update = function(){
   a.send();
   var n = a.responseText;
   alert(n);
-  n.replace(/^.+\n(\/\/ START BOOT\n.+?\/\/ END BOOT\n).*$/, "\0");
   alert(n);
 };
 addUpdateCommand();
