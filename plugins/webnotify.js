@@ -3,8 +3,6 @@
 	By ShadowCX11, 2016
 */
 
-var notifyPrefs, allowNotify, whenNotify;
-
 loadPlugin("chatprefs");
 
 var notify = function(){
