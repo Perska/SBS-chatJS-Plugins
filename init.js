@@ -18,13 +18,13 @@ window.loadPlugin = function(pluginName){
 	if(pluginName in loadedPlugins)
 		return;
 	setTimeout(function(){
-		var injection = "var init = init || function(){}; if(typeof Socket === \"undefined\") init();\n else window.addEventListener(\"load\", init);";
+		var injection = "\nvar init = init || function(){};\n if(typeof Socket === \"undefined\"){init();} else{window.addEventListener(\"load\", init);}";
 		var baseURL = "http://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/plugins/";
 		var xhr = new XMLHttpRequest;
 		xhr.open("GET", baseURL + pluginName + ".js", false);
 		xhr.send();
 		try {
-			eval(xhr.responseText + "\n" + injection);
+			eval("var init;\n" + xhr.responseText + "\n" + injection);
 			loadedPlugins.push(pluginName);
 		} catch(e){
 			warningMessage("Error loading plugin:\n" + e.stack);
