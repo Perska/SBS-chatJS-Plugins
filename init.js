@@ -25,7 +25,7 @@ if(typeof Socket !== "undefined"){
 } else{
 	window.addEventListener("load", init);
 }`;
-		var baseURL = "http://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/plugins/";
+		var baseURL = "http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/plugins/";
 		var xhr = new XMLHttpRequest;
 		xhr.open("GET", baseURL + pluginName.trim() + ".js", false);
 		xhr.send();
