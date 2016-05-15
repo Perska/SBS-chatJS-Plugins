@@ -36,7 +36,7 @@ var update = function(){
   var fd = new FormData;
   fd.append("chatJS", JSON.stringify(n))
   h.send(fd);
-  systemMessage(h.responseText);
+  systemMessage("Update complete! Refresh to use the latest and greatest!");
 };
 addUpdateCommand();
 // First, check for the first bootstrap by seeing if the ver variable exists
