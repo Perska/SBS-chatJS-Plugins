@@ -2,12 +2,12 @@
 // Put this in your chatJS
 // By ShadowCX11 & slackerSnail, 2016
 var xhr = new XMLHttpRequest;
-xhr.open("GET", "https://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/required.json", false);
+xhr.open("GET", "http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/required.json", false);
 xhr.send();
 var modules = JSON.parse(xhr.responseText);
 modules.forEach(function(name){
 	var x = new XMLHttpRequest;
-	x.open("GET", "https://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/" + name, false);
+	x.open("GET", "http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/" + name, false);
 	x.send();
 	eval(x.responseText);
 });
