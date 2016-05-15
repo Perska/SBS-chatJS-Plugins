@@ -1,4 +1,5 @@
 {
-  "name": "webnotify",
-  "description": "Displays Web Notifications when someone talks or says your name"
+  "name": "Web Notifications",
+  "description": "Displays Web Notifications when someone talks or says your name",
+  "commands": ["notify", "notifywhen"]
 }
