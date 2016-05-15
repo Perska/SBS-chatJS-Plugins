@@ -8,7 +8,7 @@ alert(xhr.responseText)
 var modules = JSON.parse(xhr.responseText);
 modules.forEach(function(name){
 	var x = new XMLHttpRequest;
-	x.open("GET", "https://raw.githubusercontent.com/ShadowC-X-11/master/SBS-chatJS-Plugins/" + name, false);
+	x.open("GET", "https://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/" + name, false);
 	x.send();
 	eval(x.responseText);
 });
