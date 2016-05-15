@@ -5,7 +5,7 @@
 function _pluginInfo(name) {
   var xhr = new XMLHttpRequest;
   var json, message;
-  xhr.open("http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/info/" + name + ".json?t=" + (new Date()).getTime(), false);
+  xhr.open("GET", "http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/info/" + name + ".json?t=" + (new Date()).getTime(), false);
   xhr.send();
   
   if(xhr.status == 404) {
