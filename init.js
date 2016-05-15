@@ -21,6 +21,7 @@ window.loadPlugin = function(pluginName){
 		}
 		return;
 	}
+	var that = this;
 	setTimeout(function(){
 		var injection = `
 var init = init || function(){};
@@ -35,10 +36,10 @@ if(typeof Socket !== "undefined"){
 		xhr.send();
 		try {
 			eval(xhr.responseText + "\n" + injection);
-			if(this.command === "loadplugin"){
+			loadedPlugins.push(pluginName);
+			if(that.command === "loadplugin"){
 				systemMessage("Plugin \"" + pluginName + "\" loaded successfully!")
 			}
-			loadedPlugins.push(pluginName);
 		} catch(e){
 			warningMessage("Error loading plugin \"" + pluginName + "\":\n" + e + "\n" + e.stack);
 		}
