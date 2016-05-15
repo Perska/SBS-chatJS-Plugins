@@ -9,7 +9,7 @@ function pluginInfo(name) {
   xhr.send();
   
   if(xhr.status == 404) {
-    warningMessage("Plugin info not found!);
+    warningMessage("Plugin info not found!");
   } else {
     try {
       json = JSON.parse(xhr.responseText);
