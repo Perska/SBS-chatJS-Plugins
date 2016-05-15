@@ -27,17 +27,17 @@ function _getlog(params) {
 			switch(params[0]) {
 				case "today":
 					now = new Date();
-					filename = "smilebasicsource.com/scratch/notactuallylogs" + _datestamp(now) + ".txt";
+					filename = "smilebasicsource.com/scratch/notactuallylogs/" + _datestamp(now) + ".txt";
 					moduleMessage("Logs for today: " + filename);
 					break;
 				case "yesterday":
 					now = new Date();
 					now.setUTCDate(now.getUTCDate() - 1);
-					filename = "smilebasicsource.com/scratch/notactuallylogs" + _datestamp(now) + ".txt";
+					filename = "smilebasicsource.com/scratch/notactuallylogs/" + _datestamp(now) + ".txt";
 					moduleMessage("Logs for yesterday: " + filename);
 					break;
 				default:
-					filename = "smilebasicsource.com/scratch/notactuallylogs" + params[0] + ".txt";
+					filename = "smilebasicsource.com/scratch/notactuallylogs/" + params[0] + ".txt";
 					moduleMessage("Logs for " + params[0] + ": " + filename);
 					break;
 			}
