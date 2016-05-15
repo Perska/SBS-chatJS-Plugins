@@ -20,7 +20,7 @@ window.loadPlugin = function(pluginName){
 	setTimeout(function(){
 		var injection = `
 var init = init || function(){};
-if(typeof Socket === "undefined"){
+if(typeof Socket !== "undefined"){
 	init();
 } else{
 	window.addEventListener("load", init);
