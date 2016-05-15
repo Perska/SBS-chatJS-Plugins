@@ -2,8 +2,8 @@
 	"name": "Log Linker",
 	"description": "Provides links to chat logs given an argument.",
 	"commands": [{
-	"name": "/logs today",
-	"description": "Links the chat log for today."
+			"name": "/logs today",
+			"description": "Links the chat log for today."
 		}, {
 			"name": "/logs yesterday",
 			"description": "Links the chat log for yesterday."
