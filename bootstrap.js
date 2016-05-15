@@ -12,5 +12,3 @@ modules.forEach(function(name){
 	x.send();
 	eval(x.responseText);
 });
-
-loadPlugin("logs");
