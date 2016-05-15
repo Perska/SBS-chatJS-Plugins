@@ -54,16 +54,18 @@ var doNotify = function(user, message, img){
 	});
 };
 var init = function(){
-	notifyPrefs = new ChatPreferences("notify");
-	if(notifyPrefs.get("enabled") == null){
-		notifyPrefs.set("enabled", false);
-	}
-	if(notifyPrefs.get("when") == null){
-		notifyPrefs.set("when", true);
-	}
-	allowNotify = notifyPrefs.get("enabled");
-	whenNotify = notifyPrefs.get("when");
-	
+	setTimeout(function(){
+		notifyPrefs = new ChatPreferences("notify");
+		if(notifyPrefs.get("enabled") == null){
+			notifyPrefs.set("enabled", false);
+		}
+		if(notifyPrefs.get("when") == null){
+			notifyPrefs.set("when", true);
+		}
+		allowNotify = notifyPrefs.get("enabled");
+		whenNotify = notifyPrefs.get("when");
+		systemMessage("Web Notifications plugin loaded!");
+	}, 2000);
 	var odm = displayMessage;
 	displayMessage = function(msg){
       try {
