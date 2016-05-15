@@ -20,7 +20,7 @@ var update = function(){
   n.replace(/.+?(\/\/ START BOOT\n.+?\/\/ END BOOT).*/, "\1");
   alert(n);
 };
-
+addUpdateCommand();
 // First, check for the first bootstrap by seeing if the ver variable exists
 if(typeof ver === "undefined"){
   setTimeout(function(){
