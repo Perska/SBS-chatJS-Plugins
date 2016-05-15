@@ -4,7 +4,8 @@
 	By ShadowCX11 & slackerSnail, 2016
 */
 
-alert(x);
+var version = "SBS chatJS Plugin System v1.0.0. Last modified " + x.getResponseHeaders("Last-Modified");
+
 var loadedPlugins = [];
 window.setImmediate = function(func){
 	return setTimeout(func, 0);
@@ -113,6 +114,10 @@ var localhelp = function(arg){
 	moduleMessage(msg);
 };
 addCommand("localhelp", localhelp, "Shows the help.");
+
+var showVersion = function(){
+	moduleMessage("Currently using " + version);
+};
 
 var events = new EventEmitter;
 var odm = displayMessage;
