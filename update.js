@@ -1,11 +1,7 @@
 // chatJS Plugin System Bootstrap updater
 // By ShadowCX11
 
-var chatJS = new XMLHttpRequest;
-chatJS.open("GET", "/query/chatJS", false);
-chatJS.send();
 
-chatJS = chatJS.responseText;
 var latestVer = "1.1";
 
 var addUpdateCommand = function(){
@@ -17,8 +13,12 @@ var update = function(){
   a.open("GET", "http://shadowc-x-11.github.io/SBS-chatJS-Plugins/bootstrap.js", false);
   a.send();
   var n = a.responseText;
-  alert(n);
   n = /^[\s\S]*\n(\/\/ START BOOT\n[\s\S]+?\n\/\/ END BOOT)\n[\s\S]+?$/.exec(n)[1];
+  var chatJS = new XMLHttpRequest;
+  chatJS.open("GET", "/query/chatJS", false);
+  chatJS.send();
+  chatJS = chatJS.responseText;
+  var n = chatJS.replace(/\n\/\/ START BOOT\n[\s\S]+?\/\/ END BOOT/, n);
   alert(n);
 };
 addUpdateCommand();
