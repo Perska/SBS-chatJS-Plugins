@@ -1,8 +1,8 @@
 /*
       A thing that spits a randomly generated key.
-      This should work now. I'm not 100% sure, tho. I did test it manually.
       Code not stolen by 12Me21 with some changes.
-      Plugin written by Perska in 2016
+      Plugin written by Perska in 2016.
+      Confirmed to work. (assuming you replace nonexistent funcs with normal chatJS stuff)
 */
 
 var key = function(param){
