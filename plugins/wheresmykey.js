@@ -12,10 +12,11 @@ var key = function(param){
       whatsthekeylength = 8;
       if (params.length > 0){
             whatsthekeylength = params[0];
+            if (params[0]<0){ whatsthekeylength = -params[0]; include_weirds = 2; }
       }
       var mahkey = '';
       for (var i = 0; i < whatsthekeylength; i++){
-            mahkey += "0123456789ABCDEFHJIJKLMNOPQRSTUVWXYZ"[Math.floor(Math.random() * 36)];
+            mahkey += "0123456789ABCDEFHJIJKLMNOPQRSTUVWXYZ_-"[Math.floor(Math.random() * (36 + include_weirds))];
       }
       moduleMessage("The key is: " + mahkey + ".");
 };
