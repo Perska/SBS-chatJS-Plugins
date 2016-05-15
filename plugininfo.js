@@ -2,7 +2,7 @@
  * Plugin Info Checker
  * by slackerSnail
  */
-function pluginInfo(name) {
+function _pluginInfo(name) {
   var xhr = new XMLHttpRequest;
   var json, message;
   xhr.open("http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/info/" + name + ".json?t=" + (new Date()).getTime(), false);
@@ -30,6 +30,6 @@ addCommand("plugininfo", function(arg) {
   if(params.length != 1) {
     warningMessage("Incorrect args!");
   } else {
-    pluginInfo(params[0]);
+    _pluginInfo(params[0]);
   }
 }, "Gets information on the named plugin.");
