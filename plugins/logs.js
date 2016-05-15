@@ -2,7 +2,12 @@
  *	Log Linker
  *	By slackerSnail
  */
-
+ 
+//Logger isn't public anymore.
+//Thus, this plugin is broken and shouldn't be imported.
+//I'm leaving the file here so people's imports don't immediately break or whatever,
+//but on plugin init they'll get a pretty little warning message.
+ 
 function _datestamp(dateObj) {
 	var now = dateObj;
 	var month = now.getUTCMonth() + 1;
@@ -49,8 +54,11 @@ function _getlog(params) {
 }
 
 function init() {
+	warningMessage("Don't import /logs anymore. It doesn't work.\nIf you don't want to see this, remove it from your chatJS imports.")
+	/*
 	addCommand("logs", function(arglist) {
 		var params = quickParamParse(arglist);
 		_getlog(params);
 	}, "Get log URL for given param");
+	*/
 }
