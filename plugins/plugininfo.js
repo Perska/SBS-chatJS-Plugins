@@ -17,10 +17,14 @@ function _pluginInfo(name) {
       warningMessage("Plugin info error: " + e.message);
     }
     //if we're all clear, begin parsing the info.
-    message += json.name + "\n" + json.description + "\n*****\n\nCommands\n=====\n";
-    json.commands.forEach(function(cmd) {
-      message += cmd.name + "\n" + cmd.description + "\n-----\n";
-    });
+    message += json.name + "\n" + json.description + "\n*****\n\nCommands\n=====";
+    if(json.commands) {
+      json.commands.forEach(function(cmd) {
+       message += "\n" + cmd.name + "\n" + cmd.description + "\n-----";
+      });
+    } else {
+      message += "\nThis plugin has no commands.";
+    }
     moduleMessage(message);
   }
 }
