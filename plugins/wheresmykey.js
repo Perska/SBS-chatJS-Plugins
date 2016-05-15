@@ -21,7 +21,7 @@ var key = function(param){
       for (var i = 0; i < whatsthekeylength; i++){
             mahkey += "0123456789ABCDEFHJIJKLMNOPQRSTUVWXYZ_-"[Math.floor(Math.random() * (36 + include_weirds))];
       }
-      systemMessage("The key is: " + mahkey + ".");
+      moduleMessage("The key is: " + mahkey + ".");
 };
 
 addCommand("whatsthekey", key, "Spits a key from the given length. If no params are given, length defaults to 8. Using a negative includes _ and -.");
