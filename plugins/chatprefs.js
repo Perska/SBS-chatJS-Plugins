@@ -2,7 +2,7 @@
 	ChatPreferences API
 	By ShadowCX11
 */
-var ChatPreferences = function(name){
+window.ChatPreferences = function(name){
 	this._name = "chatjs_" + (name + "");
 };
 ChatPreferences.prototype.getAll = function(){
