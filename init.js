@@ -5,7 +5,7 @@
 */
 
 var loadedPlugins = [];
-var setImmediate = function(func){
+window.setImmediate = function(func){
 	return setTimeout(func, 0);
 };
 
