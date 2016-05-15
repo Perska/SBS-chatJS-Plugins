@@ -35,7 +35,6 @@ var update = function(){
   h.open("POST", "/query/savesettings?pretty=1", false);
   var fd = new FormData;
   fd.append(chatJS, JSON.stringify(n))
-  h.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   h.send(fd);
   systemMessage(h.responseText);
 };
