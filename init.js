@@ -28,10 +28,11 @@ if(typeof Socket === "undefined"){
 		var baseURL = "http://raw.githubusercontent.com/ShadowC-X-11/SBS-chatJS-Plugins/master/plugins/";
 		var xhr = new XMLHttpRequest;
 		xhr.open("GET", baseURL + pluginName + ".js", false);
+		alert(pluginName);
 		xhr.send();
 		try {
 			alert(xhr.responseText);
-			eval("var init;\n" + xhr.responseText + "\n" + injection);
+			eval(xhr.responseText + "\n" + injection);
 			loadedPlugins.push(pluginName);
 		} catch(e){
 			warningMessage("Error loading plugin:\n");
