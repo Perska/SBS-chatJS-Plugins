@@ -11,7 +11,7 @@ function addCommand(name, body, desc) {
 	commands.push(new Command(name, body, desc));
 };
 
-loadPlugin = function(pluginName){
+window.loadPlugin = function(pluginName){
 	if(pluginName in loadedPlugins)
 		return;
 	setImmediate(function(){
