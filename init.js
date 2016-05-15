@@ -3,7 +3,6 @@
 	
 	By ShadowCX11 & slackerSnail, 2016
 */
-alert("Cache fix test");
 var loadedPlugins = [];
 window.setImmediate = function(func){
 	return setTimeout(func, 0);
