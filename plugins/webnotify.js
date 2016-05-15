@@ -110,6 +110,7 @@ var init = function(){
 				un = "System";
 				img = "https://cdn3.iconfinder.com/data/icons/macosxstyle/macosxstyle_png/512/System%20Preferences.png";
 				break;
+		}
 		doNotify(un, mesg, img);
 		return;
       } catch(e){
