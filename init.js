@@ -1,7 +1,7 @@
 /* 
 	SBS chatJS Plugin System Initializer
 	
-	By ShadowCX11/ShadowCX13 & slackerSnail, 2016
+	By ShadowCX11 & slackerSnail, 2016
 */
 
 var loadedPlugins = [];
