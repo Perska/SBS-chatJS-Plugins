@@ -35,10 +35,10 @@ if(typeof Socket !== "undefined"){
 		xhr.send();
 		try {
 			eval(xhr.responseText + "\n" + injection);
-			loadedPlugins.push(pluginName);
 			if(this.command === "loadplugin"){
 				systemMessage("Plugin \"" + pluginName + "\" loaded successfully!")
 			}
+			loadedPlugins.push(pluginName);
 		} catch(e){
 			warningMessage("Error loading plugin \"" + pluginName + "\":\n" + e + "\n" + e.stack);
 		}
