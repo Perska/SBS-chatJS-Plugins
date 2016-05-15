@@ -1,11 +1,10 @@
 // chatJS Plugin System Bootstrap
 // Put this in your chatJS
 // By ShadowCX11 & slackerSnail, 2016
-// Don't remove // START BOOT, // BOOT VER x.x and // END BOOT, they're used for the updater script
+// Don't remove // START BOOT and // END BOOT, they're used for the updater script
 // However, you can remove the comments above
 
 // START BOOT
-// BOOT VER 1.1
 var ver = "1.1";
 var xhr = new XMLHttpRequest;
 xhr.open("GET", "http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/required.json?t=" + (new Date()).getTime(), false);
