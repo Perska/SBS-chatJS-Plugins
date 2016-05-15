@@ -14,7 +14,7 @@ window.addCommand = function(name, body, desc) {
 };
 
 window.loadPlugin = function(pluginName){
-	if(pluginName in loadedPlugins)
+	if(loadedPlugins.indexOf(pluginName) !== -1)
 		return;
 	setTimeout(function(){
 		var injection = `
