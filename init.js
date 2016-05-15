@@ -5,6 +5,9 @@
 */
 
 var loadedPlugins = [];
+var setImmediate = function(func){
+	return setTimeout(func, 0);
+};
 
 // By slackerSnail
 function addCommand(name, body, desc) {
