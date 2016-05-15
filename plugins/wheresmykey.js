@@ -15,7 +15,7 @@ var key = function(param){
       }
       else if (params.length < 0){
             whatsthekeylength = -params[0];
-            include_weirds = 2
+            include_weirds = 2;
       }
       var mahkey = '';
       for (var i = 0; i < whatsthekeylength; i++){
