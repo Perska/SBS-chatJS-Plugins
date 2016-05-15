@@ -7,19 +7,38 @@ var latestVer = "1.1";
 var addUpdateCommand = function(){
   commands.push(new Command("update", update, "Updates the bootstrap"));
 }
+var serialize = function(obj, prefix) {
+  var str = [];
+  for(var p in obj) {
+    if (obj.hasOwnProperty(p)) {
+      var k = prefix ? prefix + "[" + p + "]" : p, v = obj[p];
+      str.push(typeof v == "object" ?
+        serialize(v, k) :
+        encodeURIComponent(k) + "=" + encodeURIComponent(v));
+    }
+  }
+  return str.join("&");
+}
 
 var update = function(){
   var a = new XMLHttpRequest;
   a.open("GET", "http://shadowc-x-11.github.io/SBS-chatJS-Plugins/bootstrap.js", false);
   a.send();
   var n = a.responseText;
-  n = /^[\s\S]*\n(\/\/ START BOOT\n[\s\S]+?\n\/\/ END BOOT)\n[\s\S]+?$/.exec(n)[1];
+  n = /^[\s\S]*(\n\/\/ START BOOT\n[\s\S]+?\n\/\/ END BOOT)[\s\S]*$/.exec(n)[1];
   var chatJS = new XMLHttpRequest;
   chatJS.open("GET", "/query/chatJS", false);
   chatJS.send();
   chatJS = chatJS.responseText;
   var n = chatJS.replace(/\n\/\/ START BOOT\n[\s\S]+?\/\/ END BOOT/, n);
-  alert(n);
+  var params = serialize({
+    "chatJS": n
+  });
+  var h = new XMLHttpRequest;
+  h.open("POST", "/query/savesettings", false);
+  h.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  h.send(params);
+  alert(h.responseText);
 };
 addUpdateCommand();
 // First, check for the first bootstrap by seeing if the ver variable exists
