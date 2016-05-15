@@ -118,6 +118,7 @@ addCommand("localhelp", localhelp, "Shows the help.");
 var showVersion = function(){
 	moduleMessage("Currently using " + version);
 };
+addCommand("version", showVersion, "Shows the current version of the chatJS subsystem");
 
 var events = new EventEmitter;
 var odm = displayMessage;
