@@ -30,6 +30,7 @@ if(typeof Socket === "undefined"){
 		xhr.open("GET", baseURL + pluginName + ".js", false);
 		xhr.send();
 		try {
+			alert(xhr.responseText);
 			eval("var init;\n" + xhr.responseText + "\n" + injection);
 			loadedPlugins.push(pluginName);
 		} catch(e){
