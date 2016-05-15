@@ -14,6 +14,7 @@ window.addCommand = function(name, body, desc) {
 };
 
 window.loadPlugin = function(pluginName){
+	pluginName = pluginName.trim();
 	if(loadedPlugins.indexOf(pluginName) !== -1)
 		return;
 	setTimeout(function(){
