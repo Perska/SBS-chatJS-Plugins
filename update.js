@@ -17,7 +17,7 @@ var update = function(){
   a.open("GET", "http://shadowc-x-11.github.io/SBS-chatJS-Plugins/bootstrap.js");
   a.send();
   var n = a.responseText;
-  n.replace(/^.+(\/\/ START BOOT\n.+?\/\/ END BOOT).*/$, "\0");
+  n.replace(/^.+(\/\/ START BOOT\n.+?\/\/ END BOOT).*$/, "\0");
   alert(n);
 };
 addUpdateCommand();
