@@ -16,6 +16,6 @@ modules.forEach(function(name){
 	x.send();
 	eval(x.responseText);
 });
-//END BOOT
+// END BOOT
 
 // Put your plugin loads here
