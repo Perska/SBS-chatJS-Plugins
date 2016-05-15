@@ -31,14 +31,12 @@ var update = function(){
   chatJS.send();
   chatJS = chatJS.responseText;
   var n = chatJS.replace(/\n\/\/ START BOOT\n[\s\S]+?\/\/ END BOOT/, n);
-  var params = serialize({
-    "chatJS": n
-  });
   var h = new XMLHttpRequest;
   h.open("POST", "/query/savesettings?pretty=1", false);
+  var fd = new FormData;
+  fd.append(chatJS, JSON.stringify(n))
   h.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  h.send(params);
-  systemMessage(params);
+  h.send(fd);
   systemMessage(h.responseText);
 };
 addUpdateCommand();
