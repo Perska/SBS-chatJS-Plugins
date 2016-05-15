@@ -25,10 +25,9 @@ if(typeof Socket !== "undefined"){
 } else{
 	window.addEventListener("load", init);
 }`;
-alert("hi");
 		var baseURL = "http://ShadowC-X-11.github.io/SBS-chatJS-Plugins/plugins/";
 		var xhr = new XMLHttpRequest;
-		xhr.open("GET", baseURL + pluginName.trim() + ".js", false);
+		xhr.open("GET", baseURL + pluginName.trim() + ".js?t=" + (new Date()).getTime(), false);
 		xhr.send();
 		try {
 			eval(xhr.responseText + "\n" + injection);
