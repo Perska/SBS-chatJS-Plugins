@@ -9,7 +9,7 @@ window.setImmediate = function(func){
 };
 
 // By slackerSnail
-function addCommand(name, body, desc) {
+window.addCommand = function(name, body, desc) {
 	commands.push(new Command(name, body, desc));
 };
 
